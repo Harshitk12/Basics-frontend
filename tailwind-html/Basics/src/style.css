@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@layer components{
+    .btn{
+    @apply  bg-amber-200 text-black w-16 rounded-lg border-2 hover:bg-amber-400 cursor-pointer;
+    }
+}
