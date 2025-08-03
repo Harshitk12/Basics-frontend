@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
+  const { isAuthenticated, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinkClass = ({ isActive }) =>
@@ -60,6 +62,35 @@ const Navbar = () => {
           <NavLink to="/contact" className={navLinkClass}>
             Contact
           </NavLink>
+          <div className="space-x-2">
+          {!isAuthenticated ? (
+            <>
+              <NavLink to="/signin">
+                <button className="px-4 py-2 text-sm border border-blue-600 text-blue-600 rounded hover:bg-blue-100">
+                  Sign In
+                </button>
+              </NavLink>
+              <NavLink to="/signup">
+                <button className="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
+                  Sign Up
+                </button>
+              </NavLink>
+            </>
+          ) : (
+            <div className='flex space-x-4'>
+            <NavLink to="/add-card" className={navLinkClass}>
+              Add Card
+            </NavLink>
+            <button
+              onClick={logout}
+              className="px-4 py-2 text-sm bg-red-500 text-white rounded hover:bg-red-600"
+            >
+              Logout
+            </button>
+            </div>
+            
+          )}
+        </div>
         </div>
       </div>
 
@@ -75,6 +106,35 @@ const Navbar = () => {
           <NavLink to="/contact" className={navLinkClass} onClick={() => setMenuOpen(false)}>
             Contact
           </NavLink>
+          <div className="space-x-2">
+          {!isAuthenticated ? (
+            <>
+              <NavLink to="/signin">
+                <button className="px-4 py-2 text-sm border border-blue-600 text-blue-600 rounded hover:bg-blue-100">
+                  Sign In
+                </button>
+              </NavLink>
+              <NavLink to="/signup">
+                <button className="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
+                  Sign Up
+                </button>
+              </NavLink>
+            </>
+          ) : (
+            <div>
+            <NavLink to="/add-card" className={navLinkClass}>
+              Add Card
+            </NavLink>
+            <button
+              onClick={logout}
+              className="px-4 py-2 text-sm bg-red-500 text-white rounded hover:bg-red-600"
+            >
+              Logout
+            </button>
+            </div>
+            
+          )}
+        </div>
         </div>
       )}
     </nav>

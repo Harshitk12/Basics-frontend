@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
+import AddCard from "./pages/AddCard";
 
 const App = () => {
   return (
@@ -13,7 +16,10 @@ const App = () => {
       <main className="flex-1 p-6">
       <div className="p-6">
         <Routes>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
           <Route path="/" element={<Home />} />
+          <Route path="/add-card" element={<AddCard />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
