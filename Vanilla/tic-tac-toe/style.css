@@ -1,0 +1,62 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.boundary{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.Title{
+    font-size: 3rem;
+    margin-bottom: 10vh;
+}
+
+.win{
+    font-size: 2rem;
+    color: blue;
+    display: flex;
+    justify-content: center;
+}
+
+.board{
+    position: relative;
+    background-color:black;
+    border:2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap:2px;
+}
+
+.line{
+    display:none;
+    position:absolute;
+    height: 45vh;
+    width:2.4px;
+    transform: rotate(90deg);
+    z-index:2;
+    background-color:red;
+}
+
+.row{
+    display: flex;
+    gap: 2px;
+}
+
+.block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    width: 7vw;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: white;
+    color:black;
+}
