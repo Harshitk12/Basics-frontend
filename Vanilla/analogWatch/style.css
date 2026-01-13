@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clock {
+    position: relative;
+    width: 35vw;
+    height: 35vw;
+}
+
+.clock img {
+    width: 100%;
+    height: 100%;
+}
+
+.hour,
+.minute,
+.second {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%);
+    border-radius: 4px;
+    background-color: black;
+}
+
+.hour {
+    height: 20%;
+    width: 2%;
+    background: black;
+}
+
+.minute {
+    height: 29%;
+    width: 1.2%;
+    background: black;
+}
+
+.second {
+    height: 35%;
+    width: 0.5%;
+    background: black;
+}
+
+.pivot{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: black;
+    height: 3%;
+    width: 3%;
+}
